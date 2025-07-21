@@ -1,6 +1,21 @@
 {
   "extends": "./tsconfig.base.json",
-  "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./packages/ui-library"
+    },
+    {
+      "path": "./packages/header"
+    },
+    {
+      "path": "./packages/footer"
+    },
+    {
+      "path": "./packages/loading"
+    },
+    {
+      "path": "./packages/util"
+    }
+  ]
 }
