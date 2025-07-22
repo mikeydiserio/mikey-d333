@@ -38,10 +38,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Lint
+      # - name: Lint
         # run: pnpm run lint
 
-      - name: Test
+      # - name: Test
         # run: pnpm run test -- --ci --runInBand
 
       - name: Build abn-search app
