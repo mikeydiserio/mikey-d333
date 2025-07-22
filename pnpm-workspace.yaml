@@ -1,10 +1,10 @@
 packages:
-  - apps/*
-  - packages/*
-
+  - 'apps/*'
+  - 'packages/*'
+  - '/apps/abn-search'
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - '@swc/core'
-  - esbuild
-  - nx
-  - sharp
+  - 'esbuild'
+  - 'nx'
+  - 'sharp'

@@ -45,11 +45,28 @@ jobs:
       - name: Test
         run: pnpm run test -- --ci --runInBand
 
-      - name: Build
-        run: pnpm run build
+      - name: Build abn-search app
+        run: pnpm exec nx build abn-search
 
-      - name: NX affected (optional - remove if not needed)
-        run: pnpm exec nx affected --target=build --base=origin/main --head=${{ github.sha }}
+      - name: Upload build artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './apps/abn-search/dist'
 
-      - name: Fix CI (nx)
-        run: pnpm exec nx fix-ci
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
