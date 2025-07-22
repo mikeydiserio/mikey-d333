@@ -1,5 +1,16 @@
 {
   "jsc": {
+    "experimental": {
+      "plugins": [
+        [
+          "@swc/plugin-styled-components",
+          {
+            "displayName": true,
+            "ssr": true
+          }
+        ]
+      ]
+    },
     "target": "es2017",
     "parser": {
       "syntax": "typescript",

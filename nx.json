@@ -80,6 +80,18 @@
         "serveStaticTargetName": "serve-static",
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
+      },
+      "outputs": [
+        "/dist"
+      ]
+    },
+    {
+      "plugin": "nx-stylelint/plugin",
+      "options": {
+        "targetName": "stylelint",
+        "extensions": [
+          "css"
+        ]
       }
     },
     {
