@@ -7,8 +7,6 @@ const baseConfig = {
   // See: https://nx.dev/recipes/next/next-config-setup
   nx: {},
   output: 'standalone',
-  basePath: isProd ? '/mikey-d333/abn-search' : '',
-  assetPrefix: isProd ? '/mikey-d333/abn-search' : '',
   distDir: 'dist',
   compiler: {
     // For other options, see https://styled-components.com/docs/tooling#babel-plugin
@@ -26,7 +24,7 @@ const baseConfig = {
     return [
       {
         source: '/',
-        destination: '/mikey-d333/abn-search',
+        destination: isProd ? '/mikey-d333/abn-search' : '',
         permanent: true,
       },
     ];

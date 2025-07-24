@@ -4,9 +4,6 @@
   "include": [],
   "references": [
     {
-      "path": "../ui-library"
-    },
-    {
       "path": "../util"
     },
     {
