@@ -1,15 +1,15 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import { composePlugins, withNx } from '@nx/next';
-
+const isProd = process.env.NODE_ENV === 'production';
 // Define the base Next.js configuration
 const baseConfig = {
   // Use this to set Nx-specific options
   // See: https://nx.dev/recipes/next/next-config-setup
   nx: {},
-  output: 'export',
-  basePath: '/abn-search',
-  assetPrefix: '/abn-search',
-  distDir: '/abn-search',
+  output: 'standalone',
+  basePath: isProd ? 'mikeydiserio.github.io' : '',
+  assetPrefix: isProd ? '/abn-search' : '',
+  distDir: 'dist',
   compiler: {
     // For other options, see https://styled-components.com/docs/tooling#babel-plugin
     styledComponents: true,
@@ -20,6 +20,17 @@ const baseConfig = {
   },
   poweredByHeader: false,
   reactStrictMode: true,
+  trailingSlash: true,
+
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/abn-search',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 let configWithPlugins = baseConfig;
