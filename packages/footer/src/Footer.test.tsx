@@ -14,4 +14,9 @@ describe('Footer Component', () => {
     expect(footerElement).toBeInTheDocument();
   });
 
+  test('should render social media links', () => {
+    render(<Footer />);
+    expect(screen.getByText('Github')).toBeInTheDocument();
+    expect(screen.getByText('LinkedIn')).toBeInTheDocument();
+  });
 });

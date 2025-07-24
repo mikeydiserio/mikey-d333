@@ -1,10 +1,10 @@
-import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 import { Button } from './Button';
 
 describe('Button Component', () => {
   const defaultProps = {
-    onClick: jest.fn(),
+    onClick: vi.fn(),
     children: 'Click me',
     disabled: false
   };

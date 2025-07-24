@@ -56,3 +56,6 @@ dist
 /abn-search/dist
 /abn-search/abn-search
 /apps/abn-search/abn-search
+/packages/*/coverage
+/apps/*/coverage
+

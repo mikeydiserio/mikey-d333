@@ -1,18 +1,18 @@
 /**
  * SearchBar Component Tests
  */
-
+import { vi } from 'vitest';
 
 describe('SearchBar Component', () => {
   const mockProps = {
     searchTerm: '',
-    setSearchTerm: jest.fn(),
-    onSearch: jest.fn(),
+    setSearchTerm: vi.fn(),
+    onSearch: vi.fn(),
     placeholder: 'Search companies...',
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   // Basic rendering tests
@@ -111,7 +111,7 @@ describe('SearchBar Component', () => {
 
     test('should handle suggestion selection', () => {
 
-      // render(<SearchBar {...mockProps} onSelectSuggestion={jest.fn()} />);
+      // render(<SearchBar {...mockProps} onSelectSuggestion={vi.fn()} />);
       // const searchInput = screen.getByRole('textbox');
       //
       // fireEvent.change(searchInput, { target: { value: 'comm' } });
@@ -225,7 +225,7 @@ describe('SearchBar Component', () => {
   // Performance tests
   describe('Performance', () => {
     test('should debounce search requests', () => {
-      jest.useFakeTimers();
+      vi.useFakeTimers();
 
 
       // render(<SearchBar {...mockProps} />);
@@ -237,10 +237,10 @@ describe('SearchBar Component', () => {
       //
       // expect(mockProps.setSearchTerm).toHaveBeenCalledTimes(3);
       //
-      // jest.advanceTimersByTime(300);
+      // vi.advanceTimersByTime(300);
       // expect(mockProps.onSearch).toHaveBeenCalledTimes(1);
 
-      jest.useRealTimers();
+      vi.useRealTimers();
     });
 
     test('should cancel previous search requests', () => {

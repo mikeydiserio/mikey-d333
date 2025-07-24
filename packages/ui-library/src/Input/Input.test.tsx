@@ -1,6 +1,7 @@
 /**
  * Input Component Tests
  */
+import { vi } from 'vitest';
 
 describe("Input Component", () => {
   // Basic rendering tests
@@ -162,7 +163,7 @@ describe("Input Component", () => {
   // Interaction tests
   describe("User Interactions", () => {
     test("should call onChange when value changes", () => {
-      const handleChange = jest.fn();
+      const handleChange = vi.fn();
 
       // render(<Input onChange={handleChange} />);
       // const input = screen.getByRole('textbox');
@@ -172,7 +173,7 @@ describe("Input Component", () => {
     });
 
     test("should call onFocus when input gains focus", () => {
-      const handleFocus = jest.fn();
+      const handleFocus = vi.fn();
 
       // render(<Input onFocus={handleFocus} />);
       // const input = screen.getByRole('textbox');
@@ -182,7 +183,7 @@ describe("Input Component", () => {
     });
 
     test("should call onBlur when input loses focus", () => {
-      const handleBlur = jest.fn();
+      const handleBlur = vi.fn();
 
       // render(<Input onBlur={handleBlur} />);
       // const input = screen.getByRole('textbox');
@@ -193,7 +194,7 @@ describe("Input Component", () => {
     });
 
     test("should call onKeyDown for keyboard events", () => {
-      const handleKeyDown = jest.fn();
+      const handleKeyDown = vi.fn();
 
       // render(<Input onKeyDown={handleKeyDown} />);
       // const input = screen.getByRole('textbox');
@@ -263,7 +264,7 @@ describe("Input Component", () => {
   // Form integration tests
   describe("Form Integration", () => {
     test("should work with form submission", () => {
-      const handleSubmit = jest.fn();
+      const handleSubmit = vi.fn();
 
       // render(
       //   <form onSubmit={handleSubmit}>

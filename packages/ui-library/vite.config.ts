@@ -48,8 +48,13 @@ export default defineConfig(() => ({
     include: ['{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
     coverage: {
-      reportsDirectory: './test-output/vitest/coverage',
-      provider: 'v8' as const,
+      reportsDirectory: '../../coverage/ui-library',
+      provider: 'istanbul' as const,
+      all: true,
+      enabled: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/**/*.styles.ts', 'src/index.ts'],
     },
+    setupFiles: ['./vitest.setup.ts'],
   },
 }));

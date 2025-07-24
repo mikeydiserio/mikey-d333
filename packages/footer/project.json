@@ -1,0 +1,16 @@
+{
+  "name": "footer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/footer"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/footer",
+        }
+    }
+  }
+}

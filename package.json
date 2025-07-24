@@ -5,7 +5,8 @@
   "scripts": {
     "monorepo:build": "nx run-many --target=build --all --parallel",
     "monorepo:test": "nx run-many --target=test --all --parallel",
-    "monorepo:lint": "nx run-many --target=lint --all --parallel"
+    "monorepo:lint": "nx run-many --target=lint --all --parallel",
+    "monorepo:test:coverage": "nx run-many --target=test --all --parallel --coverage"
   },
   "private": true,
   "devDependencies": {
@@ -75,6 +76,7 @@
     "typescript-eslint": "^8.37.0",
     "vite": "^7.0.5",
     "vite-plugin-dts": "^4.5.4",
+    "@vitest/coverage-istanbul": "^3.2.4",
     "vitest": "^3.2.4"
   },
   "dependencies": {
@@ -82,10 +84,10 @@
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.52.0",
     "@types/jest": "^30.0.0",
-    "next": "~15.2.4",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "react-is": "19.0.0",
+    "next": "~15.4.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-is": "19.1.0",
     "styled-components": "6.1.19"
   }
 }

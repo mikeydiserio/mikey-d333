@@ -2,7 +2,18 @@ import styled from 'styled-components';
 
 export const LoadingWrapper = styled.div<{ size?: string }>`
   text-align: center;
-  padding: ${({ size }) => (size === 'medium' ? '30px' : '60px')};
+  padding: ${({ size }) => {
+    switch (size) {
+      case 'small':
+        return '10px';
+      case 'medium':
+        return '30px';
+      case 'large':
+        return '60px';
+      default:
+        return '30px';
+    }
+  }};
   color: #6b7280;
   display: flex;
   flex-direction: column;

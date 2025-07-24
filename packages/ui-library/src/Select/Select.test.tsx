@@ -3,6 +3,7 @@
  */
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 import { Select } from './Select';
 
 // Mock options for testing
@@ -16,11 +17,11 @@ const mockOptions = [
 describe('Select Component', () => {
   const defaultProps = {
     options: mockOptions,
-    onChange: jest.fn(),
+    onChange: vi.fn(),
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   // Basic rendering tests
