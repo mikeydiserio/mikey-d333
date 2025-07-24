@@ -1,6 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultBase": "master",
   "namedInputs": {
     "default": [
       "{projectRoot}/**/*",
@@ -20,7 +19,6 @@
       "{workspaceRoot}/.github/workflows/ci.yml"
     ]
   },
-  "nxCloudId": "687df4d6d203d7fab8712fed",
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
