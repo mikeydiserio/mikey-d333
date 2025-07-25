@@ -49,3 +49,32 @@ jobs:
       # Nx Cloud recommends fixes for failures to help you get CI green faster. Learn more: https://nx.dev/ci/features/self-healing-ci
       - run: pnpx nx fix-ci
         if: always()
+
+      - name: Upload build artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './apps/abn-search/dist'
+
+  deploy:
+    needs: master
+
+    runs-on: ubuntu-latest
+
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+
+    permissions:
+      pages: write
+
+      id-token: write
+
+    environment:
+      name: github-pages
+
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+
+        id: deployment
+
+        uses: actions/deploy-pages@v4
