@@ -1,9 +1,18 @@
 {
-  "name": "@mikey-d333/abn-search",
+  "name": "abn-search",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "dev": "nx next:dev --turbopack",
+    "build": "nx next:build",
+    "start": "nx next:start",
+    "lint": "next lint",
+    "test": "vitest"
+  },
   "nx": {
-    "name": "abn-search"
+    "name": "abn-search",
+    "sourceRoot": "src",
+    "projectType": "application"
   },
   "dependencies": {
     "next": "~15.4.4",

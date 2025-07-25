@@ -36,7 +36,7 @@
       ]
     },
     "types": [
-      "jest",
+      "vitest",
       "node"
     ],
     "outDir": "dist",
