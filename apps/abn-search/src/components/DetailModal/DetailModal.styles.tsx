@@ -1,6 +1,7 @@
+import { ButtonHTMLAttributes, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-export const  ModalOverlay = styled.div`
+export const ModalOverlay = styled.div<HTMLAttributes<HTMLDivElement>>`
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -32,7 +33,7 @@ export const  ModalHeader = styled.div`
 	color: white;
 	padding: 30px;
 	position: relative;
-	
+
 	h2 {
 		font-size: 28px;
 		margin: 0;
@@ -40,7 +41,7 @@ export const  ModalHeader = styled.div`
 	}
 `;
 
-export const  ModalCloseButton = styled.button`
+export const ModalCloseButton = styled.button<ButtonHTMLAttributes<HTMLButtonElement>>`
 	position: absolute;
 	top: 20px;
 	right: 20px;
@@ -102,7 +103,7 @@ export const  DetailValue = styled.span`
 	color: #374151;
 	font-weight: 500;
 	word-break: break-word;
-	
+
 	a {
 			color: #667eea;
 			text-decoration: none;

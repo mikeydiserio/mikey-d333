@@ -10,11 +10,13 @@ import * as S from './DetailModal.styles'
 interface DetailModalProps {
   onClose: () => void
   result: SearchResult
+  children?: React.ReactNode
 }
 
 export const DetailModal: React.FC<DetailModalProps> = ({
   result,
   onClose,
+  children
 }) => {
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -125,7 +127,7 @@ export const DetailModal: React.FC<DetailModalProps> = ({
                   {result?.gst_status_from_date}
                 </S.DetailValue>
               </S.DetailItem>
-
+              { children && children}
             </S.DetailGrid>
           </S.DetailSection>
         </S.ModalBody>
