@@ -4,15 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "nx next:dev --turbopack",
-    "build": "nx next:build",
+    "build": "next build",
     "start": "nx next:start",
     "lint": "next lint",
     "test": "vitest"
   },
   "nx": {
-    "name": "@mikey-d333/abn-search",
-    "sourceRoot": "src",
-    "projectType": "application"
+
   },
   "dependencies": {
     "next": "~15.4.4",

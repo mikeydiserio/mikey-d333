@@ -1,3 +1,54 @@
 {
-  "name": "@mikey-d333/abn-search"
+  "name": "@mikey-d333/abn-search",
+  "sourceRoot": "src",
+  "projectType": "application",
+  "targets": {
+    "dev": {
+      "executor": "@nx/next:dev",
+      "options": {
+        "buildTarget": "abn-search:build",
+        "port": 3000,
+        "turbopack": true
+      }
+    },
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": [
+        "{workspaceRoot}/apps/abn-search/dist"
+      ],
+      "options": {
+        "outputPath": "{workspaceRoot}/dist/apps/abn-search"
+      }
+    },
+    "start": {
+      "executor": "@nx/next:start",
+      "options": {
+        "buildTarget": "abn-search:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:lint",
+      "options": {
+        "linter": "eslint",
+        "tsConfig": [
+          "tsconfig.app.json",
+          "tsconfig.spec.json"
+        ],
+        "exclude": [
+          "**/node_modules/**",
+          "!**/*.js"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/abn-search"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/abn-search"
+      }
+    }
+  }
 }
