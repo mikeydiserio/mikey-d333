@@ -1,5 +1,5 @@
 {
-  "name": "abn-search",
+  "name": "@mikey-d333/abn-search",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "test": "vitest"
   },
   "nx": {
-    "name": "abn-search",
+    "name": "@mikey-d333/abn-search",
     "sourceRoot": "src",
     "projectType": "application"
   },
