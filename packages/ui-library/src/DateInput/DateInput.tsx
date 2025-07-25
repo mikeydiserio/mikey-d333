@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, InputHTMLAttributes } from 'react';
 import { DateInputWrapper, StyledInput } from './DateInput.styles';
 import { Calendar } from './Calendar';
 
-interface DateInputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface DateInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   value: string;
   onChange: (value: string) => void;
   onDateSelect?: (date: Date | null) => void;

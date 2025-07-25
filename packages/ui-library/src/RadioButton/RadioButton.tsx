@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes } from 'react';
 import { RadioWrapper, HiddenRadio, StyledRadio, RadioLabel } from './RadioButton.styles';
 
-interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
+interface RadioButtonProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   checked: boolean;
   onChange: (value: string) => void;
   label: string;

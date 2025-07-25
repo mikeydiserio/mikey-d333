@@ -8,9 +8,7 @@ const baseConfig = {
   nx: {},
   output: 'standalone',
   distDir: './apps/abn-search/dist',
-  basePath: isProd
-    ? 'mikeydiserio.github.io/mikey-d333/abn-search'
-    : '/abn-search',
+  basePath: isProd ? '/mikey-d333/abn-search' : '/abn-search',
   compiler: {
     // For other options, see https://styled-components.com/docs/tooling#babel-plugin
     styledComponents: true,

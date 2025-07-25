@@ -1,4 +1,4 @@
-import { SearchBar } from '@mikey-d333/ui-library';
+import { SearchBar } from "@mikey-d333/ui-library";
 import * as S from "./Header.styles";
 
 export interface HeaderProps {

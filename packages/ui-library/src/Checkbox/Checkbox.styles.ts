@@ -48,7 +48,7 @@ export const StyledCheckbox = styled.div<{ checked: boolean }>`
   }
 `;
 
-export const Icon = styled.svg`
+export const Icon = styled.svg<{ checked: boolean }>`
   fill: none;
   stroke: white;
   stroke-width: 2px;

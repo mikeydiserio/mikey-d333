@@ -12,7 +12,11 @@
     "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "bundler",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo"
+    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+    "baseUrl": ".",
+    "paths": {
+      "@mikey-d333/ui-library": ["../ui-library/dist"]
+    }
   },
   "exclude": [
     "out-tsc",
@@ -45,7 +49,8 @@
     "src/**/*.js",
     "src/**/*.jsx",
     "src/**/*.ts",
-    "src/**/*.tsx"
+    "src/**/*.tsx",
+    "../../src/types/styled.d.ts"
   ],
   "references": [
     {

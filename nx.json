@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "master",
   "namedInputs": {
     "default": [
@@ -98,7 +98,20 @@
     "test": {
       "dependsOn": [
         "^build"
-      ]
+      ],
+      "outputs": [
+        "{projectRoot}/coverage"
+      ],
+      "cache": true
+    },
+    "build": {
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "cache": true
+    },
+    "lint": {
+      "cache": true
     }
   },
   "generators": {
@@ -127,5 +140,5 @@
   "sync": {
     "applyChanges": true
   },
-  "nxCloudId": "6882f77e762c5679e9cd7798"
+  "nxCloudId": "68838d555aeca87e36dd93fd"
 }

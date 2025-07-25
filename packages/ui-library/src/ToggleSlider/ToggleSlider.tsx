@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes } from 'react';
 import { ToggleWrapper, HiddenToggle, StyledToggle, ToggleThumb, ToggleLabel } from './ToggleSlider.styles';
 
-interface ToggleSliderProps extends InputHTMLAttributes<HTMLInputElement> {
+interface ToggleSliderProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   checked: boolean;
   onChange: (checked: boolean) => void;
   label?: string;
