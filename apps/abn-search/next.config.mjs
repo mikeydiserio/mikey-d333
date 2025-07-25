@@ -6,8 +6,11 @@ const baseConfig = {
   // Use this to set Nx-specific options
   // See: https://nx.dev/recipes/next/next-config-setup
   nx: {},
-  output: 'exports',
-  distDir: 'dist',
+  output: 'standalone',
+  distDir: './apps/abn-search/dist',
+  basePath: isProd
+    ? 'mikeydiserio.github.io/mikey-d333/abn-search'
+    : '/abn-search',
   compiler: {
     // For other options, see https://styled-components.com/docs/tooling#babel-plugin
     styledComponents: true,
