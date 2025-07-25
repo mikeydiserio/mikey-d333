@@ -45,7 +45,7 @@ jobs:
       # run: pnpm run test -- --ci --runInBand
 
       - name: Build abn-search app
-        run: pnpm exec nx run @mikey-d333/abn-search:build
+        run: pnpm exec nx run @mikey-d333/abn-search:build --no-cloud
 
       - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v3
