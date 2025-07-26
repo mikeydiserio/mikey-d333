@@ -44,10 +44,10 @@
       "path": "./packages/util"
     },
     {
-      "path": "./apps/abn-search-e2e"
+      "path": "./apps/abn-search"
     },
     {
-      "path": "./apps/abn-search"
+      "path": "./packages/video-player"
     }
   ]
 }

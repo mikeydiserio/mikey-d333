@@ -1,7 +1,7 @@
 // eslint-disable @typescript-eslint/no-var-requires
 const withBundleAnalyzer = require('@next/bundle-analyzer');
 const { composePlugins, withNx } = require('@nx/next');
-// const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV === 'production';
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -21,6 +21,11 @@ const baseConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   trailingSlash: true,
+  basePath: isProd ? '/mikey-d333' : '',
+  assetPrefix: isProd ? '/mikey-d333/' : '',
+  images: {
+    unoptimized: true, // GitHub Pages does not support Next.js image optimization
+  },
 };
 
 let configWithPlugins = baseConfig;
