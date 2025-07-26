@@ -2,19 +2,19 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "noEmit": true,
-    "emitDeclarationOnly": false,
+    "strict": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "baseUrl": ".",
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "plugins": [
@@ -22,49 +22,43 @@
         "name": "next"
       }
     ],
+    "target": "ES2017",
+    "skipLibCheck": true,
+    "noEmit": true,
     "paths": {
       "@/*": [
         "./src/*"
       ],
-      "@/components/*": [
+      "@components/*": [
         "./src/components/*"
       ],
-      "@/hooks": [
+      "@hooks/*": [
         "./src/hooks/*"
       ],
-      "@/styling": [
-        "./src/styling/*"
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@types/*": [
+        "./src/types/*"
       ]
-    },
-    "types": [
-      "vitest",
-      "node"
-    ],
-    "outDir": "dist",
-    "rootDir": "src",
-    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
-    "target": "ES2017",
-    "skipLibCheck": true,
-    "strict": false,
-    "isolatedModules": true
+    }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "src/**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
     "next-env.d.ts"
+    // "next.config.js" is intentionally excluded to prevent TypeScript from treating it as an input file
   ],
   "exclude": [
-    "out-tsc",
-    "dist",
     "node_modules",
     "jest.config.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts",
-    ".next",
-    "eslint.config.js",
-    "eslint.config.cjs",
-    "eslint.config.mjs"
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "next.config.js"
   ]
 }

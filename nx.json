@@ -1,6 +1,10 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "defaultBase": "master",
+  "workspaceLayout": {
+    "libsDir": "packages",
+    "appsDir": "apps"
+  },
   "namedInputs": {
     "default": [
       "{projectRoot}/**/*",
@@ -98,20 +102,7 @@
     "test": {
       "dependsOn": [
         "^build"
-      ],
-      "outputs": [
-        "{projectRoot}/coverage"
-      ],
-      "cache": true
-    },
-    "build": {
-      "outputs": [
-        "{projectRoot}/dist"
-      ],
-      "cache": true
-    },
-    "lint": {
-      "cache": true
+      ]
     }
   },
   "generators": {
@@ -140,5 +131,10 @@
   "sync": {
     "applyChanges": true
   },
-  "nxCloudId": "68838d555aeca87e36dd93fd"
+  "nxCloudId": "68838d555aeca87e36dd93fd",
+  "release": {
+    "version": {
+      "preVersionCommand": "pnpm dlx nx run-many -t build"
+    }
+  }
 }

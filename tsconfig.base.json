@@ -5,18 +5,16 @@
     "declarationMap": true,
     "baseUrl": ".",
     "paths": {
-      "@mikey-d333/ui-library": ["packages/ui-library/src"],
-      "@mikey-d333/header": ["packages/header/src"],
-      "@mikey-d333/footer": ["packages/footer/src"],
-      "@mikey-d333/loading": ["packages/loading/src"],
-      "@mikey-d333/util": ["packages/util/src"],
       "@mikey-d333/abn-search": ["apps/abn-search/src"],
-      "@mikey-d333/abn-search-e2e": ["apps/abn-search-e2e/src"]
+      "@mikey-d333/abn-search-e2e": ["apps/abn-search-e2e/src"],
+      "@mikey-d333/footer": ["packages/footer/src"],
+      "@mikey-d333/header": ["packages/header/src"],
+      "@mikey-d333/loading": ["packages/loading/src"],
+      "@mikey-d333/ui-library": ["packages/ui-library/src"],
+      "@mikey-d333/util": ["packages/util/src"],
+      "@mikey-d333/video-player": ["packages/video-player/src/index.ts"]
     }
   },
   "include": ["src/types/**/*.d.ts"],
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

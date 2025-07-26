@@ -54,7 +54,7 @@ jobs:
 
       # Build only frontend applications for deployment
       - name: Build frontend applications
-        run: pnpm exec nx build firmable-web-ui --configuration=production
+        run: pnpm exec nx build search-abn --configuration=production
         env:
           # Add your Supabase environment variables for production build
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
@@ -75,7 +75,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/apps/firmable-web-ui
+          path: ./dist/apps/abn-search
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages

@@ -1,10 +1,10 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import Index from '../src/pages/index';
 
-describe('Index', () => {
+import VideoPlayer from './video-player';
+
+describe('VideoPlayer', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Index />);
+    const { baseElement } = render(<VideoPlayer />);
     expect(baseElement).toBeTruthy();
   });
 });

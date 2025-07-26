@@ -19,8 +19,8 @@
       "@mikey-d333/util": [
         "./packages/util/src"
       ],
-      "@mikey-d333/abn-search-e2e": [
-        "./apps/abn-search-e2e/src"
+      "@mikey-d333/video-player": [
+        "./packages/video-player/src"
       ],
       "@mikey-d333/abn-search": [
         "./apps/abn-search/src"

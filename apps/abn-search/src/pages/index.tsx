@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
-import DetailModal from '@/components/DetailModal';
-import FilterPanel from '@/components/FilterPanel';
-import Header from '@/components/Header';
-import Pagination from '@/components/Pagination';
-import ResultsPanel from '@/components/ResultsPanel';
-import SearchBar from '@/components/SearchBar';
-import { createClient } from '@supabase/supabase-js';
 import { NextRequest } from 'next/server';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import DetailModal from '../components/DetailModal';
+import FilterPanel from '../components/FilterPanel';
+import Header from '../components/Header';
+import Pagination from '../components/Pagination';
+import ResultsPanel from '../components/ResultsPanel';
+import SearchBar from '../components/SearchBar';
+import { createClient } from '../utils/supabase/client';
 
 export const ResultsAndFilters = styled.div`
   display: flex;
@@ -77,9 +77,7 @@ function useDebounce<T>(value: T, delay: number): T {
 }
 
 export const Homepage =  () => {
-  const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-  const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
-  const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+  const supabase = createClient();
 
   // State management
   const [results, setResults] = useState<SearchResult[]>([]);
