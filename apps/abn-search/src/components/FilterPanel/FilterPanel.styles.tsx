@@ -8,8 +8,8 @@ export const Panel = styled.div`
   margin-left: 24px;
   padding: 24px 24px;
   height: auto;
-  max-height: 100vh;
-  overflow-y: scroll;
+  position: sticky;
+  top: 0;
 `;
 
 export const FilterGroup = styled.div`

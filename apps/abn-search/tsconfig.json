@@ -25,33 +25,14 @@
     "target": "ES2017",
     "skipLibCheck": true,
     "noEmit": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@utils/*": [
-        "./src/utils/*"
-      ],
-      "@styles/*": [
-        "./src/styles/*"
-      ],
-      "@types/*": [
-        "./src/types/*"
-      ]
-    }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "../../packages/header/src"
     // "next.config.js" is intentionally excluded to prevent TypeScript from treating it as an input file
   ],
   "exclude": [

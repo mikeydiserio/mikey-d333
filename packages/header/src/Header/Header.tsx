@@ -2,18 +2,19 @@ import { SearchBar } from "@mikey-d333/ui-library";
 import * as S from "./Header.styles";
 
 export interface HeaderProps {
-  searchTerm: string;
-  setSearchTerm: (term: string) => void;
+  searchTerm?: string;
+  setSearchTerm?: (term: string) => void;
   hints?: string[];
 }
-
-
 
 export const Header = ({
   searchTerm,
   setSearchTerm,
   hints = [],
 }: HeaderProps) => {
+
+  const showSearchSection = typeof searchTerm !== 'undefined' && typeof setSearchTerm !== 'undefined'
+
   return (
     <S.HeaderWrapper>
       <S.HeaderTop>
@@ -28,12 +29,13 @@ export const Header = ({
           </S.MenuItem>
         </S.Menu>
       </S.HeaderTop>
-      <S.SearchSection>
-        <SearchBar
-          value={searchTerm}
-          onChange={setSearchTerm}
-          placeholder="Search company name, ABN, industry, location..."
-        />
+      {showSearchSection && (
+        <S.SearchSection>
+          <SearchBar
+            value={searchTerm}
+            onChange={setSearchTerm}
+            placeholder="Search company name, ABN, industry, location..."
+          />
         {hints && <S.HintBox>
           {hints.map((hint) => {
             return (
@@ -43,7 +45,8 @@ export const Header = ({
             );
           })}
         </S.HintBox>}
-      </S.SearchSection>
+        </S.SearchSection>
+      )}
     </S.HeaderWrapper>
   );
 };

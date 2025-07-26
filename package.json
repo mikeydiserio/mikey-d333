@@ -7,14 +7,16 @@
     "monorepo:build": "nx run-many --target=build --projects=@mikey-d333/*",
     "test": "nx run-many --target=test --all --parallel",
     "lint": "nx run-many --target=lint --all --parallel",
-    "reset": "lerna clean --y && pnpm store prune && nx reset && pnpm monorepo:install"
+    "reset": "lerna clean --y && pnpm store prune && nx reset && pnpm monorepo:install",
+    "start:graph": "nx graph",
+    "build": "nx build abn-search",
+    "e2e": "nx e2e",
+    "affected:apps": "nx affected:apps"
   },
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "apps/*"
-    ]
-  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.23.2",

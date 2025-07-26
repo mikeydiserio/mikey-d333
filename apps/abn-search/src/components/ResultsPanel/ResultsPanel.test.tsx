@@ -2,8 +2,8 @@
  * ResultsPanel Component Tests
  */
 
-import { CompanyEntity } from '@/types'
 import { SAMPLE_COMPANIES } from '../../mocks/companies'
+import { CompanyEntity } from '../../types'
 
 // Mock data for testing
 const mockEntities: CompanyEntity[] = SAMPLE_COMPANIES.slice(

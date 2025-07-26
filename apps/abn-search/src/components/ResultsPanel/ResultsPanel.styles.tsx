@@ -49,9 +49,7 @@ export const ResultsColumn = styled.div`
   background: white;
   margin: 0;
   padding: 24px;
-    height: auto;
-  max-height: 100vh;
-  overflow-y: scroll;
+  height: auto;
 `;
 
 export const ResultsList = styled.ul`
@@ -68,7 +66,7 @@ export const ResultsItem = styled.li`
   cursor: pointer;
   position: relative;
   border-bottom: 1px solid grey;
-  padding: 24px 0;
+  padding: 12px 0;
   transition: all ease-in-out 200;
 
 
@@ -104,3 +102,45 @@ export const SkeletonText = styled.div`
   height: 12px;
   margin-bottom: 10px;
 `;
+
+
+export const  DetailItem = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const  DetailLabel = styled.span`
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+`
+
+export const  DetailValue = styled.span`
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+`
+
+export const  CompanyTags = styled.div`
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto; /* Pushes tags to the bottom */
+  padding-top: 20px;
+  position: relative;
+  z-index: 1;
+`
+
+export const Tag = styled.span`
+  padding: 6px 12px;
+  background: #f3f4f6;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+`
+
+

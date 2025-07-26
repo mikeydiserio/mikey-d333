@@ -1,15 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
+import Header from '@mikey-d333/header';
 import { NextRequest } from 'next/server';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import DetailModal from '../components/DetailModal';
-import FilterPanel from '../components/FilterPanel';
-import Header from '../components/Header';
-import Pagination from '../components/Pagination';
-import ResultsPanel from '../components/ResultsPanel';
-import SearchBar from '../components/SearchBar';
-import { createClient } from '../utils/supabase/client';
+import { createClient } from '../..//utils/supabase/client';
+import DetailModal from '../../components/DetailModal';
+import FilterPanel from '../../components/FilterPanel';
+import Pagination from '../../components/Pagination';
+import ResultsPanel from '../../components/ResultsPanel';
 
 export const ResultsAndFilters = styled.div`
   display: flex;
@@ -24,6 +23,7 @@ export const PageContainer = styled.div`
   width: 100%;
   max-width: 1080px;
 `
+
 export const HeaderWrapper = styled.header`
   flex-flow: row nowrap;
   text-align: left;
@@ -60,6 +60,13 @@ export interface Filters {
   revenueBands: string[]
 }
 
+export const hints = [
+  'Science',
+  'Technology',
+  'Hospitality',
+  'Retail',
+  'Education'
+]
 
 
 // The custom useDebounce hook remains the same
@@ -171,10 +178,11 @@ export const Homepage =  () => {
   // Render component
   return (
     <PageContainer>
-      <HeaderWrapper>
-        <Header />
-        <SearchBar query={query} setQuery={setQuery} />
-      </HeaderWrapper>
+      <Header
+        searchTerm={query}
+        setSearchTerm={setQuery}
+        hints={hints}
+      />
       <ResultsAndFilters>
           <ResultsPanel
             results={results}

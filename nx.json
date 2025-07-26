@@ -5,6 +5,19 @@
     "libsDir": "packages",
     "appsDir": "apps"
   },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ]
+      }
+    }
+  },
   "namedInputs": {
     "default": [
       "{projectRoot}/**/*",
@@ -25,6 +38,17 @@
     ]
   },
   "plugins": [
+    {
+      "plugin": "@nx/next/plugin",
+      "options": {
+        "startTargetName": "next:start",
+        "buildTargetName": "next:build",
+        "devTargetName": "next:dev",
+        "serveStaticTargetName": "serve-static",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
     {
       "plugin": "@nx/js/typescript",
       "options": {
@@ -58,31 +82,6 @@
       }
     },
     {
-      "plugin": "@nx/react/router-plugin",
-      "options": {
-        "buildTargetName": "build",
-        "devTargetName": "dev",
-        "startTargetName": "start",
-        "watchDepsTargetName": "watch-deps",
-        "buildDepsTargetName": "build-deps",
-        "typecheckTargetName": "typecheck"
-      }
-    },
-    {
-      "plugin": "@nx/next/plugin",
-      "options": {
-        "startTargetName": "start",
-        "buildTargetName": "build",
-        "devTargetName": "dev",
-        "serveStaticTargetName": "serve-static",
-        "buildDepsTargetName": "build-deps",
-        "watchDepsTargetName": "watch-deps"
-      },
-      "outputs": [
-        "/dist"
-      ]
-    },
-    {
       "plugin": "nx-stylelint/plugin",
       "options": {
         "targetName": "stylelint",
@@ -92,9 +91,9 @@
       }
     },
     {
-      "plugin": "@nx/jest/plugin",
+      "plugin": "@nx/playwright/plugin",
       "options": {
-        "targetName": "test"
+        "targetName": "playwright:e2e"
       }
     }
   ],
