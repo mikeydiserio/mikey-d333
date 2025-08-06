@@ -1,0 +1,35 @@
+{
+  "name": "@mikey-d333/card",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/card/dist"
+      ],
+      "options": {
+        "configFile": "{workspaceRoot}/packages/card/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/card/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/card"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/card"
+      }
+    }
+  }
+}

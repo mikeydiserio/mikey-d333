@@ -1,0 +1,35 @@
+{
+  "name": "@mikey-d333/spinner",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/spinner/dist"
+      ],
+      "options": {
+        "configFile": "{workspaceRoot}/packages/spinner/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/spinner/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/spinner"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/spinner"
+      }
+    }
+  }
+}

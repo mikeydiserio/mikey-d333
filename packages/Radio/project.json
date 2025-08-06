@@ -1,0 +1,35 @@
+{
+  "name": "@mikey-d333/radio",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/radio/dist"
+      ],
+      "options": {
+        "configFile": "{workspaceRoot}/packages/radio/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/radio/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/radio"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/radio"
+      }
+    }
+  }
+}

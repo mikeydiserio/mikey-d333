@@ -1,0 +1,35 @@
+{
+  "name": "@mikey-d333/accordion",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/accordion/dist"
+      ],
+      "options": {
+        "configFile": "{workspaceRoot}/packages/accordion/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/accordion/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/accordion"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/accordion"
+      }
+    }
+  }
+}

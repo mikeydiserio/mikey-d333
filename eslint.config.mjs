@@ -1,4 +1,4 @@
-import baseConfig from './eslint.base.config.mjs';
+import baseConfig from './eslint.base.config.mjs'
 
 export default [
   ...baseConfig,
@@ -42,4 +42,4 @@ export default [
     // Override or add rules here
     rules: {},
   },
-];
+]

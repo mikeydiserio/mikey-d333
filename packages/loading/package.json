@@ -5,6 +5,15 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -13,5 +22,8 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     }
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
   }
 }

@@ -1,0 +1,35 @@
+{
+  "name": "@mikey-d333/toast",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/toast/dist"
+      ],
+      "options": {
+        "configFile": "{workspaceRoot}/packages/toast/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/toast/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/toast"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/toast"
+      }
+    }
+  }
+}

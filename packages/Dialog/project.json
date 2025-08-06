@@ -1,0 +1,35 @@
+{
+  "name": "@mikey-d333/dialog",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/dialog/dist"
+      ],
+      "options": {
+        "configFile": "{workspaceRoot}/packages/dialog/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/dialog/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/dialog"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/dialog"
+      }
+    }
+  }
+}

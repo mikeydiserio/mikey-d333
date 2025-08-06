@@ -1,3 +1,4 @@
+/// <reference types='vitest' />
 import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import { defineConfig } from 'vite';
@@ -25,18 +26,17 @@ export default defineConfig(() => ({
       transformMixedEsModules: true,
     },
     lib: {
+      // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
       name: '@mikey-d333/header',
       fileName: 'index',
+      // Change this to the formats you want to support.
+      // Don't forget to update your package.json as well.
       formats: ['es' as const],
     },
     rollupOptions: {
-      external: [
-        'react',
-        'react-dom',
-        'react/jsx-runtime',
-        '@mikey-d333/ui-library',
-      ],
+      // External packages that should not be bundled into your library.
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
     },
   },
   test: {
@@ -46,8 +46,13 @@ export default defineConfig(() => ({
     include: ['{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/packages/header',
-      provider: 'v8' as const,
+      reportsDirectory: '../../coverage/header',
+      provider: 'istanbul' as const,
+      all: true,
+      enabled: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/**/*.styles.ts', 'src/index.ts'],
     },
+    setupFiles: ['./vitest.setup.ts'],
   },
 }));

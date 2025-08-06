@@ -9,20 +9,12 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "test", "lint", "e2e"]
       }
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -33,9 +25,7 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": [
-      "{workspaceRoot}/.github/workflows/ci.yml"
-    ]
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "plugins": [
     {
@@ -85,9 +75,7 @@
       "plugin": "nx-stylelint/plugin",
       "options": {
         "targetName": "stylelint",
-        "extensions": [
-          "css"
-        ]
+        "extensions": ["css"]
       }
     },
     {
@@ -95,13 +83,22 @@
       "options": {
         "targetName": "playwright:e2e"
       }
+    },
+    {
+      "plugin": "@nx/react/router-plugin",
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "startTargetName": "start",
+        "watchDepsTargetName": "watch-deps",
+        "buildDepsTargetName": "build-deps",
+        "typecheckTargetName": "typecheck"
+      }
     }
   ],
   "targetDefaults": {
     "test": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     }
   },
   "generators": {

@@ -1,0 +1,35 @@
+{
+  "name": "@mikey-d333/pagination",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/pagination/dist"
+      ],
+      "options": {
+        "configFile": "{workspaceRoot}/packages/pagination/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/pagination/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/pagination"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/pagination"
+      }
+    }
+  }
+}

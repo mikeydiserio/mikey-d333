@@ -6,6 +6,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  },
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -17,5 +20,8 @@
   },
   "dependencies": {
     "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
   }
 }

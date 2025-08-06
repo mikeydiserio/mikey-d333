@@ -1,0 +1,35 @@
+{
+  "name": "@mikey-d333/floating-action-button",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/floating-action-button/dist"
+      ],
+      "options": {
+        "configFile": "{workspaceRoot}/packages/floating-action-button/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/floating-action-button/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/floating-action-button"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/floating-action-button"
+      }
+    }
+  }
+}

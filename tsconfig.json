@@ -3,14 +3,10 @@
   "files": [],
   "compilerOptions": {
     "baseUrl": ".",
-    
   },
   "references": [
     {
       "path": "./packages/ui-library"
-    },
-    {
-      "path": "./packages/header"
     },
     {
       "path": "./packages/footer"
@@ -22,7 +18,7 @@
       "path": "./packages/util"
     },
     {
-      "path": "./apps/abn-search"
+      "path": "./apps/breakout"
     },
     {
       "path": "./packages/video-player"

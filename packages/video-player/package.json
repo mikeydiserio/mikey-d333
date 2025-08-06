@@ -1,18 +1,26 @@
 {
   "name": "@mikey-d333/video-player",
   "version": "0.0.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "directories": {
     "lib": "dist"
   },
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "vite build"
+  },
   "exports": {
     ".": {
       "import": "./index.mjs",
       "require": "./index.js"
     }
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
   }
 }
