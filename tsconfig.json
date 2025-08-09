@@ -6,22 +6,31 @@
   },
   "references": [
     {
-      "path": "./packages/ui-library"
-    },
-    {
-      "path": "./packages/footer"
-    },
-    {
-      "path": "./packages/loading"
-    },
-    {
-      "path": "./packages/util"
-    },
-    {
       "path": "./apps/breakout"
     },
     {
-      "path": "./packages/video-player"
+      "path": "./packages/mikey-d333-ui-library"
+    },
+    {
+      "path": "./packages/mikey-d333-footer"
+    },
+    {
+      "path": "./packages/mikey-d333-loading"
+    },
+    {
+      "path": "./packages/mikey-d333-util"
+    },
+    {
+      "path": "./packages/mikey-d333-video-player"
+    },
+    {
+      "path": "./packages/mikey-d333-header"
+    },
+    {
+      "path": "./packages/mikey-d333-theme"
+    },
+    {
+      "path": "./packages/mikey-d333-testing-utils"
     }
   ]
 }

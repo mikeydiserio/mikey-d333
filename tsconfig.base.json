@@ -4,18 +4,46 @@
     "declaration": true,
     "declarationMap": true,
     "baseUrl": ".",
+    "types": [
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ],
+    "skipLibCheck": true,
     "paths": {
-      "@mikey-d333/abn-search": ["apps/abn-search/src"],
-      "@mikey-d333/abn-search-e2e": ["apps/abn-search-e2e/src"],
-      "@mikey-d333/accordion": ["packages/Accordion/src/index.ts"],
-      "@mikey-d333/footer": ["packages/footer/src"],
-      "@mikey-d333/header": ["packages/header/src"],
-      "@mikey-d333/loading": ["packages/loading/src"],
-      "@mikey-d333/ui-library": ["packages/ui-library/src"],
-      "@mikey-d333/util": ["packages/util/src"],
-      "@mikey-d333/video-player": ["packages/video-player/src/index.ts"]
+      "@mikey-d333/footer": [
+        "packages/mikey-d333-footer/src"
+      ],
+      "@mikey-d333/header": [
+        "packages/header/src"
+      ],
+      "@mikey-d333/loading": [
+        "packages/mikey-d333-loading/src"
+      ],
+      "@mikey-d333/testing-utils": [
+        "packages/mikey-d333-testing-utils/src/index.ts"
+      ],
+      "@mikeyd333/theme": [
+        "packages/mikeyd333-theme/src/index.ts"
+      ],
+      "@mikey-d333/ui-library": [
+        "packages/mikey-d333-ui-library/src"
+      ],
+      "@mikey-d333/util": [
+        "packages/mikey-d333-util/src"
+      ],
+      "@mikey-d333/video-player": [
+        "packages/mikey-d333-video-player/src"
+      ]
     }
   },
-  "include": ["src/types/**/*.d.ts"],
-  "exclude": ["node_modules", "tmp"]
+  "include": [
+    "src/types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ],
+  "files": [
+    "./globals.d.ts"
+  ]
 }

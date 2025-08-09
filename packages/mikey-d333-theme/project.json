@@ -1,0 +1,16 @@
+{
+  "name": "@mikey-d333/theme",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "tags": [],
+  "sourceRoot": "src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "manifestRootsToUpdate": [
+        "dist/{projectRoot}"
+      ],
+      "currentVersionResolver": "git-tag",
+      "fallbackCurrentVersionResolver": "disk"
+    }
+  }
+}

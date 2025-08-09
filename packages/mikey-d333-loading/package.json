@@ -1,0 +1,33 @@
+{
+  "name": "@mikey-d333/loading",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  },
+  "peerDependencies": {
+    "styled-components": "6.1.19",
+    "@mikey-d333/theme": "workspace:*"
+  }
+}

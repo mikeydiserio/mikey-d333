@@ -1,0 +1,22 @@
+{
+  "name": "@mikey-d333/testing-utils",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "dependencies": {
+    "react-router-dom": "^7.8.0"
+  },
+  "peerDependencies": {
+    "styled-components": "6.1.19",
+    "@mikey-d333/theme": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  }
+}

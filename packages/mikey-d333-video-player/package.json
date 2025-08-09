@@ -1,0 +1,31 @@
+{
+  "name": "@mikey-d333/video-player",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "peerDependencies": {
+    "styled-components": "6.1.19",
+    "@mikey-d333/util": "workspace:*",
+    "@mikey-d333/theme": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  }
+}

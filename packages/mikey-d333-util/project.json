@@ -1,0 +1,35 @@
+{
+  "name": "@mikey-d333/util",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/mikey-d333-util/dist"
+      ],
+      "options": {
+        "configFile": "{workspaceRoot}/packages/mikey-d333-util/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/mikey-d333-util/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/mikey-d333-util"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/mikey-d333-util"
+      }
+    }
+  }
+}
