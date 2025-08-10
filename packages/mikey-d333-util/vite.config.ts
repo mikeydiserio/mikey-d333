@@ -1,13 +1,19 @@
+/// <reference types='vitest' />
+import react from '@vitejs/plugin-react'
+import * as path from 'path'
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig(() => ({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/packages/mikey-d333-util',
-  plugins: [],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
+  plugins: [
+    react(),
+    dts({
+      entryRoot: 'src',
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+    }),
+  ],
   build: {
     outDir: './dist',
     emptyOutDir: true,
@@ -43,5 +49,6 @@ export default defineConfig(() => ({
       include: ['src/**/*.{ts,tsx}'],
       exclude: ['src/**/*.styles.ts', 'src/index.ts'],
     },
+    setupFiles: ['./vitest.setup.ts'],
   },
 }))

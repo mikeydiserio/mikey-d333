@@ -21,7 +21,6 @@
     }
   },
   "peerDependencies": {
-    "styled-components": "6.1.19",
     "@mikey-d333/util": "workspace:*",
     "@mikey-d333/theme": "workspace:*"
   },

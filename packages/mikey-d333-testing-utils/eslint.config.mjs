@@ -9,4 +9,12 @@ export default [
     // Override or add rules here
     rules: {},
   },
+  {
+    overrides: [
+      {
+        files: ['**/*.tsx'],
+        parserOptions: { ecmaFeatures: { jsx: true } },
+      },
+    ],
+  },
 ]

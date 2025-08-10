@@ -3,10 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next:build",
+    "lint": "next:lint .",
+    "start": "next preview"
   },
   "dependencies": {
     "react": "^19.1.0",

@@ -7,10 +7,37 @@
     "ui lib testing-utils"
   ],
   "targets": {
-    "nx-release-publish": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{workspaceRoot}/packages/mikey-d333-testing-utils/dist"
+      ],
       "options": {
-        "packageRoot": "dist/{projectRoot}"
+        "configFile": "{workspaceRoot}/packages/mikey-d333-testing-utils/vite.config.ts",
+        "outputPath": "{workspaceRoot}/packages/mikey-d333-testing-utils/dist",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "./assets"
+          }
+        ]
       }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "{workspaceRoot}/coverage/mikey-d333-testing-utils"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/mikey-d333-testing-utils"
+      }
+    }
+  },
+  "nx-release-publish": {
+    "options": {
+      "packageRoot": "dist/{projectRoot}"
     }
   },
   "release": {

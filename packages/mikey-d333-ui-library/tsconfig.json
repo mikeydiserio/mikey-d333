@@ -3,7 +3,7 @@
   "include": [],
   "references": [
     {
-      "path": "../util"
+      "path": "../mikey-d333-util"
     },
     {
       "path": "./tsconfig.lib.json"

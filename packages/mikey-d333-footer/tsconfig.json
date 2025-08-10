@@ -1,6 +1,22 @@
 {
-  "files": [],
-  "include": [],
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "../../dist/out-tsc"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.*",
+    "**/*.test.*",
+    "vite.config.*",
+    "vitest.config.*"
+  ],
   "references": [
     {
       "path": "./tsconfig.lib.json"
@@ -9,5 +25,4 @@
       "path": "./tsconfig.spec.json"
     }
   ],
-  "extends": "../../tsconfig.base.json"
 }

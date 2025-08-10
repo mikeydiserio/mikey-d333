@@ -8,19 +8,14 @@
     ],
     "types": [
       "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts",
-      "vite/client"
+      "vitest"
     ],
     "rootDir": "src",
     "jsx": "react-jsx",
     "module": "esnext",
-    "moduleResolution": "bundler",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo"
+    "moduleResolution": "bundler"
   },
   "exclude": [
-    "out-tsc",
-    "dist",
     "**/*.spec.ts",
     "**/*.test.ts",
     "**/*.spec.tsx",
@@ -40,20 +35,12 @@
     "src/**/*.test.js",
     "src/**/*.spec.js",
     "src/**/*.test.jsx",
-    "src/**/*.spec.jsx",
-    "eslint.config.js",
-    "eslint.config.cjs",
-    "eslint.config.mjs"
+    "src/**/*.spec.jsx"
   ],
   "include": [
     "src/**/*.js",
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx"
-  ],
-  "references": [
-    {
-      "path": "../mikey-d333-util/tsconfig.lib.json"
-    }
   ]
 }

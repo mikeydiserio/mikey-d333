@@ -1,22 +1,17 @@
 /// <reference types='vitest' />
-import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
-import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 import * as path from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/mikey-d333-theme',
+  cacheDir: '../../node_modules/.vite/packages/mikey-d333-ui-library',
   plugins: [
     react(),
-    nxViteTsPaths(),
-    nxCopyAssetsPlugin(['*.md']),
     dts({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
-      pathsToAliases: false,
     }),
   ],
   // Uncomment this if you are using workers.
@@ -26,7 +21,7 @@ export default defineConfig(() => ({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../../dist/packages/mikey-d333-theme',
+    outDir: './dist',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
@@ -35,7 +30,7 @@ export default defineConfig(() => ({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'theme',
+      name: '@mikey-d333/ui-library',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
@@ -53,8 +48,13 @@ export default defineConfig(() => ({
     include: ['{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/packages/mikey-d333-theme',
-      provider: 'v8' as const,
+      reportsDirectory: '../../coverage/packages/@mikey-d333-ui-library',
+      provider: 'istanbul' as const,
+      all: true,
+      enabled: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/**/*.styles.ts', 'src/index.ts'],
     },
+    setupFiles: ['./vitest.setup.ts'],
   },
 }))
