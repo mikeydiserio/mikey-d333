@@ -1,6 +1,7 @@
 {
   "name": "@mikey-d333/testing-utils",
   "version": "0.0.1",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -14,13 +15,16 @@
     "build": "vite build"
   },
   "exports": {
+    "./package.json": "./package.json",
     ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
   "peerDependencies": {
-    "@mikey-d333/util": "workspace:*",
+    "styled-components": "6.1.19",
     "@mikey-d333/theme": "workspace:*"
   },
   "devDependencies": {

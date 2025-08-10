@@ -10,17 +10,16 @@ declare module 'styled-components' {
       cardBorder: string
       cardBackground: string
       text: string
-      iconColor: string
-      iconHoverColor: string
-      sidebarHoverBg: string
       logoutButton: string
       danger: string
+      iconHoverColor: string
+      iconColor: string
+      sidebarHoverBg: string
       gray: {
         100: string
         200: string
         300: string
         400: string
-        500: string
       }
     }
     shadows: {

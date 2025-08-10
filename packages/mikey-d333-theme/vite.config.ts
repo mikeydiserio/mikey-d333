@@ -6,7 +6,7 @@ import dts from 'vite-plugin-dts'
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/mikey-d333-ui-library',
+  cacheDir: '../../node_modules/.vite/packages/mikey-d333-theme',
   plugins: [
     react(),
     dts({
@@ -14,10 +14,6 @@ export default defineConfig(() => ({
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
     }),
   ],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
@@ -30,7 +26,7 @@ export default defineConfig(() => ({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: '@mikey-d333/ui-library',
+      name: '@mikey-d333/theme',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
@@ -48,7 +44,7 @@ export default defineConfig(() => ({
     include: ['{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/packages/@mikey-d333-ui-library',
+      reportsDirectory: '../../coverage/packages/mikey-d333-theme',
       provider: 'istanbul' as const,
       all: true,
       enabled: true,

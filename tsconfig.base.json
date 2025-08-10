@@ -22,8 +22,8 @@
       "@mikey-d333/testing-utils": [
         "packages/mikey-d333-testing-utils/src/index.ts"
       ],
-      "@mikeyd333/theme": [
-        "packages/mikeyd333-theme/src/index.ts"
+      "@mikey-d333/theme": [
+        "packages/mikey-d333-theme/dist"
       ],
       "@mikey-d333/ui-library": [
         "packages/mikey-d333-ui-library/src"

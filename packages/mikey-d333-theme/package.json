@@ -1,6 +1,8 @@
 {
   "name": "@mikey-d333/theme",
   "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "directories": {
@@ -21,11 +23,12 @@
       "default": "./dist/index.js"
     }
   },
-  "peerDependencies": {
-    "styled-components": "6.1.19",
-    "@mikey-d333/theme": "workspace:*"
-  },
   "devDependencies": {
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "vite-plugin-dts": "^3.0.0",
+    "@vitejs/plugin-react": "^4.0.0"
+  },
+  "peerDependencies": {
+    "styled-components": "6.1.19"
   }
 }

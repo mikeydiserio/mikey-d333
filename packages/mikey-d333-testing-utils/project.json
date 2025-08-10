@@ -1,11 +1,8 @@
 {
   "name": "@mikey-d333/testing-utils",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/testing-utils/src",
+  "sourceRoot": "src",
   "projectType": "library",
-  "tags": [
-    "ui lib testing-utils"
-  ],
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
@@ -33,20 +30,6 @@
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/mikey-d333-testing-utils"
       }
-    }
-  },
-  "nx-release-publish": {
-    "options": {
-      "packageRoot": "dist/{projectRoot}"
-    }
-  },
-  "release": {
-    "version": {
-      "manifestRootsToUpdate": [
-        "dist/{projectRoot}"
-      ],
-      "currentVersionResolver": "git-tag",
-      "fallbackCurrentVersionResolver": "disk"
     }
   }
 }

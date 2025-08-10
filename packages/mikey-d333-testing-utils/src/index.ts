@@ -1,1 +1,1 @@
-export * from './lib/testing-utils'
+export * from './testing-utils'

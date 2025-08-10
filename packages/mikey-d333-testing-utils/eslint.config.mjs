@@ -1,5 +1,5 @@
-import nx from '@nx/eslint-plugin'
-import baseConfig from '../../eslint.base.config.mjs'
+import baseConfig from '../../eslint.config.mjs';
+import nx from '@nx/eslint-plugin';
 
 export default [
   ...baseConfig,
@@ -9,12 +9,4 @@ export default [
     // Override or add rules here
     rules: {},
   },
-  {
-    overrides: [
-      {
-        files: ['**/*.tsx'],
-        parserOptions: { ecmaFeatures: { jsx: true } },
-      },
-    ],
-  },
-]
+];
